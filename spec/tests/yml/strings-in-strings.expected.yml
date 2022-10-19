@@ -1,3 +1,8 @@
 model:
   string: "a string 'inside another string' yes"
   string2: 'a string "inside another string" yes'
+  string3: "one 'string' and another 'string'"
+  string4: 'one "string" and another "string"'
+  string5: one 'string' and another 'string'
+  string6: one "string" and another "string"
+  
