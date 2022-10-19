@@ -2,14 +2,14 @@ name: Ruby
 
 on:
   push:
-    branches:
-      - main
-
+    branches: [ main ]
   pull_request:
+    branches: [ main ]
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 10 # 6 hours (default) is too long
 
     strategy:
       matrix:
@@ -23,5 +23,5 @@ jobs:
       with:
         ruby-version: ${{ matrix.ruby }}
         bundler-cache: true
-    - name: Run the default task
+    - name: Test
       run: bundle exec rake
