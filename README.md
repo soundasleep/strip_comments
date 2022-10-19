@@ -29,7 +29,15 @@ stripped = StripComments::strip_yaml(input)
 You can use this to, for example, rewrite all source files in a folder:
 
 ```rb
-TODO
+require "strip_comments"
+
+Dir.glob(File.join(File.dirname(__FILE__), "..", "**", "*.{css,html,yml,properties,glsl}")).each do |filename|
+  extension = filename.split(".").last
+  input = File.open(filename).read
+  output = StripComments::strip(extension, input)
+
+  File.write(filename, output)
+end
 ```
 
 ## Development
