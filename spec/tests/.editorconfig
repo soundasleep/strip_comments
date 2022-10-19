@@ -1,0 +1,8 @@
+# EditorConfig is awesome: http://EditorConfig.org
+
+# With our test files, we expect to have extra whitespace
+[*]
+end_of_line = lf
+charset = utf-8
+insert_final_newline = false
+trim_trailing_whitespace = false
