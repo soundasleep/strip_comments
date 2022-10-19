@@ -5,7 +5,7 @@ on:
     branches: [ release ]
 
 jobs:
-  build:
+  publish:
     timeout-minutes: 10 # 6 hours (default) is too long
     runs-on: ubuntu-latest
 
@@ -20,11 +20,9 @@ jobs:
       run: bundle exec rake
 
     - name: Release Gem
-      uses: cadwallion/publish-rubygems-action@master
+      uses: discourse/publish-rubygems-action@v2-beta
       env:
-        GITHUB_TOKEN: ${{secrets.PERSONAL_TOKEN}}
         RUBYGEMS_API_KEY: ${{secrets.RUBYGEMS_API_KEY}}
-        RELEASE_COMMAND: |
-          git config --global user.email "automated@jevon.org" &&
-          git config --global user.name "GitHub Actions" &&
-          rake release
+        GIT_EMAIL: automated@jevon.org
+        GIT_NAME: GitHub Actions
+        RELEASE_COMMAND: rake release
