@@ -1,0 +1,13 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  color: white; }
+
+h1, p {
+  margin: 0;
+  padding: 0; }
+
+html, body {
+  font-family: "GandhiSans";
+  /* a hack to get text shadows working in CSS2 */
+  font-size: 14px; }
