@@ -23,7 +23,29 @@ module StripComments
   end
 
   def self.strip_yaml(str)
-    str.gsub(/#[^\n]+/, '')
+    stripped_strings_to_not_be_uncommented = {}
+
+    str.gsub!(/'([^']+)'/) do |m|
+      strip_key = "__STRIPPED_KEY_#{stripped_strings_to_not_be_uncommented.size}__"
+      stripped_strings_to_not_be_uncommented[strip_key] = m
+      puts "replacing '#{m}' with '#{strip_key}'"
+      strip_key
+    end
+
+    str.gsub!(/"([^"]+)"/) do |m|
+      strip_key = "__STRIPPED_KEY_#{stripped_strings_to_not_be_uncommented.size}__"
+      stripped_strings_to_not_be_uncommented[strip_key] = m
+      puts "replacing '#{m}' with '#{strip_key}'"
+      strip_key
+    end
+
+    str.gsub!(/#[^\n]+/, '')
+
+    stripped_strings_to_not_be_uncommented.each do |k,v|
+      str[k] = v
+    end
+
+    str
   end
 
   def self.strip_properties(str)
@@ -37,7 +59,6 @@ module StripComments
   def self.strip_css(str)
     strip_c_like(str)
   end
-
 
   def self.strip_c_like(str)
     str.gsub(/\/\/[^\n]+/, '')

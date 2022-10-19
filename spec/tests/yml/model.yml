@@ -1,0 +1,5 @@
+model:
+  oxygenMass:
+    type: double
+    label: 'Helpful method to return stored oxygen (i.e. {@link #getAbsorbedMass()}'
+    return: 'getAbsorbedMass()'
