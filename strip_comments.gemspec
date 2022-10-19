@@ -8,17 +8,15 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Jevon Wright"]
   spec.email         = ["jevon@jevon.org"]
 
-  spec.summary       = "TODO: Write a short summary, because RubyGems requires one."
-  spec.description   = "TODO: Write a longer description or delete this line."
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.summary       = "Simple gem to strip comments from source files"
+  spec.description   = "Uses regular expressions to strip things that look like comments from strings"
+  spec.homepage      = "https://github.com/soundasleep/strip_comments"
   spec.license       = "MIT"
   spec.required_ruby_version = ">= 2.6.0"
 
-  spec.metadata["allowed_push_host"] = "TODO: Set to your gem server 'https://example.com'"
-
   spec.metadata["homepage_uri"] = spec.homepage
-  spec.metadata["source_code_uri"] = "TODO: Put your gem's public repo URL here."
-  spec.metadata["changelog_uri"] = "TODO: Put your gem's CHANGELOG.md URL here."
+  spec.metadata["source_code_uri"] = "https://github.com/soundasleep/strip_comments"
+  spec.metadata["changelog_uri"] = "https://github.com/soundasleep/strip_comments/blob/main/CHANGELOG.md"
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
