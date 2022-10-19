@@ -19,14 +19,12 @@ jobs:
     - name: Test
       run: bundle exec rake
 
-    - name: Setup Git config
-      run: |
-        git config --global user.email "automated@jevon.org"
-        git config --global user.name "GitHub Actions"
-
     - name: Release Gem
       uses: cadwallion/publish-rubygems-action@master
       env:
         GITHUB_TOKEN: ${{secrets.PERSONAL_TOKEN}}
         RUBYGEMS_API_KEY: ${{secrets.RUBYGEMS_API_KEY}}
-        RELEASE_COMMAND: rake release
+        RELEASE_COMMAND: |
+          git config --global user.email "automated@jevon.org" &&
+          git config --global user.name "GitHub Actions" &&
+          rake release
