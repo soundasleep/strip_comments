@@ -2,6 +2,8 @@
 
 Uses regular expressions to strip things that look like comments from strings.
 
+**Supported extensions:** css, glsl, html, properties, yml
+
 ## Installation
 
 Add this line to your application's Gemfile:
