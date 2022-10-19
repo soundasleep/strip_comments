@@ -1,0 +1,7 @@
+model:
+  a:
+    string: it's a string
+  b:
+    string: 
+  c:
+    string: it's another string

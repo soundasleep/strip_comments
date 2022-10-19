@@ -39,7 +39,7 @@ module StripComments
 
     str.gsub!(/#[^\n]+/, '')
 
-    stripped_strings_to_not_be_uncommented.each do |k,v|
+    stripped_strings_to_not_be_uncommented.reverse_each do |k,v|
       str[k] = v
     end
 
