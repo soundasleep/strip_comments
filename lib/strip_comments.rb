@@ -47,7 +47,7 @@ module StripComments
   end
 
   def self.strip_properties(str)
-    str.gsub(/(\n)[\t ]*#[^\n]+/, '\\1')
+    str.gsub(/(\n)[\t ]*#[^\n]+/, '\\1').gsub(/^#[^\n]+/, '\\1')
   end
 
   def self.strip_glsl(str)
